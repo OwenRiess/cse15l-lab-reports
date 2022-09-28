@@ -33,6 +33,7 @@ beets
 new list
 1. Washington
 2. Oregon
-3. California
+3. Californi
 
+[index link](https://owenriess.github.io/cse15l-lab-reports/index.md)
 
