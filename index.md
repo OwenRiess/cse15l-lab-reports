@@ -1,1 +1,1 @@
-Chicken's are cool!!!
+Hello, world!
