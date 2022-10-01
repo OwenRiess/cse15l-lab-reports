@@ -86,7 +86,6 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 
 
 
-[Lab Report 1](https://owenriess.github.io/cse15l-lab-reports/lab-report-2-week-1.md) 
 
 
 
