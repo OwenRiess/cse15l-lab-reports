@@ -1,4 +1,4 @@
-***CSE 15l Lab Report***
+***CSE 15l week 1 Lab Report***
 
 **Installing VScode**
 - I already had VScode installed before the lab so I didn’t really have to do anything for this step
