@@ -15,7 +15,7 @@
 ![image2](images/openSSH.png)
 
 - After that step you will have to go https://sdacs.ucsd.edu/~icc/index.php to look up your account and change your password for your cse 15l account
-- The next step is to open up the terminal on VScode and put in ssh cse15lfa22zz@ieng6.ucsd.edu, but replace the zz that is highlighted with the last 2 letters in your cse 15l account username. Then click enter.
+- The next step is to open up the terminal on VScode by Terminal > New Terminal on the menu commands and put in ssh cse15lfa22zz@ieng6.ucsd.edu, but replace the with the last 2 letters in your cse 15l account username. Then click enter.
 - Then you will type in the new password that you made and it should look like this.
 
 ![image3](images/ssh.png)
@@ -41,8 +41,8 @@
 
 ![image7](images/whereAmI.png)
 
-- The in the terminal you will type out 
-scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAm.java is the file that I’m moving and ql are the last 2 letters from cse 15l account username. It will then ask for your password.
+- Then in the terminal you will type out 
+scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAmI.java is the file that I’m moving and ql are the last 2 letters from cse 15l account username. It will then ask for your password.
 
 ![image8](images/whereAmIpassword.png)
 
@@ -52,7 +52,7 @@ scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAm.java is the
 
 **Setting An SSH Key**
 
- - The first step is to run the ssh -keygen command then after that you will type out /Users/owenriess/.ssh/id_rsa owenriess is the user in this case then it will ask for you to make a passphrase
+ - The first step is to run the ssh -keygen command on your computer then after that you will type out /Users/owenriess/.ssh/id_rsa owenriess is the user in this case then it will ask for you to make a passphrase
 
  ![image10](/images/settingSSH.png)
 
@@ -67,7 +67,7 @@ scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAm.java is the
 
 **Optimizing Remote Running**
 
-- If you want to run a command while logging into the remote server you can write the command you want to do right after the  ssh command for example 
+- If you want to run a command while logging into the remote server you can write the command you want to do right after the ssh command for example 
 ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote server right after logging in 
 
 ![image13](images/"LS".png)
