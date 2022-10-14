@@ -60,8 +60,8 @@ scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAmI.java is th
 
  ![image11](images/mkdir.png)
 
- -Once you are logged out you will then scp type out 
- /Users/owenriess/.ssh/id_rsa.pub cs15lfa2ql2@ieng6.ucsd.edu:~/.ssh/authorized_keys in the terminal and put in the password that you created.(This step didn’t work for me. I went through the whole process twice and both times my password didn’t work. I will go to office hours to try and resolve my issue)
+ -Once you are logged out you will then type out 
+ scp /Users/owenriess/.ssh/id_rsa.pub cs15lfa2ql2@ieng6.ucsd.edu:~/.ssh/authorized_keys in the terminal and put in the password that you created.
 
 ![image12](images/password.png)
 
