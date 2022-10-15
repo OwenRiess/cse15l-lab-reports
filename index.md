@@ -85,6 +85,7 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 
 
 **Week 3 Lab Report**
+(having weird issue where on vs codes the markdowns are showing up not on page)
 
 **Part 1**
 
