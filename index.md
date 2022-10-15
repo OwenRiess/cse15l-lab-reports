@@ -87,8 +87,8 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 **Week 3 Lab Report**
 
 **Part 1**
-
-<pre><code>lass Handler implements URLHandler {
+```
+class Handler implements URLHandler {
 
     ArrayList<String> words = new ArrayList<String>();
 
@@ -112,8 +112,8 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
             return "404 Not Found!";
         }
     }
-}</code></pre>
-
+}
+```
 
 
 ![image15](images/pineapple2.png)
@@ -131,32 +131,34 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 
 **Part 2**
 
-<p> Given code
-<pre><code>static void reverseInPlace(int[] arr) {
+Given code
+```
+static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
-  }</code></pre>
+  }
+```
 
-  <p> fixed code
-
-  <pre><code>static void reverseInPlace(int[] arr) {
+fixed code
+```
+static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length/2; i += 1) {
       int temp = arr[i];
       arr[i] = arr[arr.length-1-i];
       arr[arr.length-1-i] = temp;
     }
-  }</code></pre>
-
+  }
+```
 - The faliure inducing input of the given code was that it replacing the numbers one at a time in the array which meant that the numbers that got replaced in the first half were replacing the numbers in the second half of the array.
 
 - The symptom of this was that once the half way mark was reached the numbers in the given reversed array didn't match the array being manipulated by the reverseInPlace method.
 
 - The bug in the code that needed to be fixed was instead of iterating thruogh the whole array only going through half of the array and swaping the numbers in the front and back half around.
 
-<p> Given Code
-
-<pre><code> static List<String> filter(List<String> list, StringChecker sc) {
+ Given Code
+```
+static List<String> filter(List<String> list, StringChecker sc) {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
@@ -164,11 +166,13 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
       }
     }
     return result;
-  }</code></pre>
+  }
+  ```
 
-  <p> fixed code
+fixed code
 
-  <pre><code>interface StringChecker { boolean checkString(String s); }
+```
+interface StringChecker { boolean checkString(String s); }
 
 class MyStringChecker implements StringChecker {
 
@@ -194,8 +198,8 @@ class ListExamples {
       }
     }
     return result;
-  }</code></pre>
-
+  }
+```
   - The faliure inducing input was that the filter method was trying to pass through a StringChecker object without having anything that implemented the StringChecker interface
 
   - The symptom was that when writing a test I wasn't able to pass through a StringChecker object.
