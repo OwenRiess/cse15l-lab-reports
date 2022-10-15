@@ -60,7 +60,7 @@ scp WhereAmI.java cs15lfa22ql@ieng6.ucsd.edu:~/ in this case WhereAmI.java is th
 
  ![image11](images/mkdir.png)
 
- -Once you are logged out you will then type out 
+ - Once you are logged out you will then type out 
  scp /Users/owenriess/.ssh/id_rsa.pub cs15lfa2ql2@ieng6.ucsd.edu:~/.ssh/authorized_keys in the terminal and put in the password that you created.
 
 ![image12](images/password.png)
@@ -79,6 +79,130 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 - A way to write out the commands that you want to type on terminal you can use the up arrow to go through previous commands that you have ran.
 
 
+
+
+
+
+
+****Week 3 Lab Report****
+
+**Part 1**
+
+<pre><code>lass Handler implements URLHandler {
+
+    ArrayList<String> words = new ArrayList<String>();
+
+    public String handleRequest(URI url) {
+        if (url.getPath().equals("/")) {
+            return String.format("List of words: %s", words);
+        } 
+        else {
+            System.out.println("Path: " + url.getPath());
+            if (url.getPath().contains("/add")) {
+                String[] parameters = url.getQuery().split("=");
+                if (parameters[0].equals("p")) {
+                    words.add("pineapple");
+                    return String.format("added %s!", parameters[1]);
+                }
+                else if (parameters[0].equals("a")){
+                    words.add("apple");
+                    return String.format("added %s!", parameters[1]);
+                }
+            }
+            return "404 Not Found!";
+        }
+    }
+}</code></pre>
+
+
+
+![image15](images/pineapple2.png)
+
+- Here I called p=pineapple in the query of the url which is supposed to add the string pineapple to my arraylist that I created and return "added pineapple!"
+
+![image16](images/apple2.png)
+
+- In this image I called a=apple in the query of the url which is supposed to add the string apple to my arraylist that I created and return "added apple!"
+
+![image17](images/list.png)
+
+- This image shows what happens when the page is reloaded with nothing in the query. It displays the words that have been added to my arraylist.
+
+
+**Part 2**
+
+<p> Given code
+<pre><code>static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }</code></pre>
+
+  <p> fixed code
+
+  <pre><code>static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length/2; i += 1) {
+      int temp = arr[i];
+      arr[i] = arr[arr.length-1-i];
+      arr[arr.length-1-i] = temp;
+    }
+  }</code></pre>
+
+- The faliure inducing input of the given code was that it replacing the numbers one at a time in the array which meant that the numbers that got replaced in the first half were replacing the numbers in the second half of the array.
+
+- The symptom of this was that once the half way mark was reached the numbers in the given reversed array didn't match the array being manipulated by the reverseInPlace method.
+
+- The bug in the code that needed to be fixed was instead of iterating thruogh the whole array only going through half of the array and swaping the numbers in the front and back half around.
+
+<p> Given Code
+
+<pre><code> static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }</code></pre>
+
+  <p> fixed code
+
+  <pre><code>interface StringChecker { boolean checkString(String s); }
+
+class MyStringChecker implements StringChecker {
+
+  public MyStringChecker() {
+
+  }
+  public boolean checkString(String s) {
+    if (s.equals("word")) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+}
+class ListExamples {
+  static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }</code></pre>
+
+  - The faliure inducing input was that the filter method was trying to pass through a StringChecker object without having anything that implemented the StringChecker interface
+
+  - The symptom was that when writing a test I wasn't able to pass through a StringChecker object.
+
+  - To fix the bug I created a class that implemented StringChecker so I could pass through a valid StringChecker object when writing my test for this method.
+
+  
 
 
 
