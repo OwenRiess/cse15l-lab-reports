@@ -84,7 +84,7 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 
 
 
-****Week 3 Lab Report****
+**Week 3 Lab Report**
 
 **Part 1**
 
@@ -202,7 +202,7 @@ class ListExamples {
 
   - To fix the bug I created a class that implemented StringChecker so I could pass through a valid StringChecker object when writing my test for this method.
 
-  
+
 
 
 
