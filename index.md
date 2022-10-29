@@ -123,17 +123,17 @@ class Handler implements URLHandler {
 ```
 
 
-![image15](images/pineapple2.png)
+![image15](images/pineapple3.png)
 
-- Here I called p=pineapple in the query of the url which is supposed to add the string pineapple to my arraylist that I created and return "added pineapple!"
+- Here I called s=pineapple in the query after the path   /add of the url which is supposed to add the string pineapple to my arraylist that I created and return "added pineapple!"
 
-![image16](images/apple2.png)
+![image16](images/apple3.png)
 
-- In this image I called a=apple in the query of the url which is supposed to add the string apple to my arraylist that I created and return "added apple!"
+- In this image I called s=apple in the query after the path /add of the url which is supposed to add the string apple to my arraylist that I created and return "added apple!"
 
-![image17](images/list.png)
+![image17](images/search2.png)
 
-- This image shows what happens when the page is reloaded with nothing in the query. It displays the words that have been added to my arraylist.
+- This image shows what happens when I call s=app in the query after the path /search of the url which is supposed to return all the words that have been added that contain the substring app within them
 
 
 **Part 2**
