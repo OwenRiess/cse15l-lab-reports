@@ -84,7 +84,7 @@ ssh cs15lfa22ql@ieng6.ucsd.edu "ls" will list the home directory on the remote s
 <div style="page-break-after: always"></div>
 
 
-**Week 3 Lab Report**
+**Lab Report 2**
 
 **Part 1**
 ```
