@@ -157,11 +157,13 @@ static void reverseInPlace(int[] arr) {
     }
   }
 ```
-- The faliure inducing input of the given code was that it replacing the numbers one at a time in the array which meant that the numbers that got replaced in the first half were replacing the numbers in the second half of the array.
+- An example of a faliure inducing input of the orginal code could be [1,2,3,4] 
 
-- The symptom of this was that once the half way mark was reached the numbers in the given reversed array didn't match the array being manipulated by the reverseInPlace method.
+- The symptom of the given code was that it replacing the numbers one at a time in the array which meant that the numbers that got replaced in the first half were replacing the numbers in the second half of the array.
 
 - The bug in the code that needed to be fixed was instead of iterating thruogh the whole array only going through half of the array and swaping the numbers in the front and back half around.
+
+- The connection between the bug and the symptom was that the symptom which was not reversing the list of numbers properly was causing the test to reverse a list of numbers to not match the intended output.
 
  Given Code
 ```
@@ -207,11 +209,14 @@ class ListExamples {
     return result;
   }
 ```
-  - The faliure inducing input was that the filter method was trying to pass through a StringChecker object without having anything that implemented the StringChecker interface
+  - The faliure inducing input was that when writing a test I wasn't able to pass through a StringChecker object.
 
-  - The symptom was that when writing a test I wasn't able to pass through a StringChecker object.
+  - The symptom was that the filter method was trying to pass through a StringChecker object without having anything that implemented the StringChecker interface.
+   
 
   - To fix the bug I created a class that implemented StringChecker so I could pass through a valid StringChecker object when writing my test for this method.
+
+  - the connection between the bug and the symptom in the code above is that the symptom which was a method trying to pass in a object that it couldn't was causing the bug which was the code not running properly and not being able to test the method.
 
 
 
