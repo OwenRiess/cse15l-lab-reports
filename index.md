@@ -291,13 +291,13 @@ Owen-Riess-Macbook:docsearch owenriess$ find . -type d -mtime -10
 ./technical/biomed
 ./technical/911report
 ```
--The command *find . -type d -mtime -10* is checking for all the directories that have been edited less then ten days ago. This can be helpful for keeping track of what directories have been edited over a longer period of time. 
+- The command *find . -type d -mtime -10* is checking for all the directories that have been edited less then ten days ago. This can be helpful for keeping track of what directories have been edited over a longer period of time. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -size +5M
 ./.git/objects/pack/pack-76c2be97747be8c169abcc0a0a6082bddbd7ec39.pack
 ```
--The command *find . -size +5M* is searching all the files and returning all the files that larger then 5 megabytes in this case. This can be useful for finding which files are taking up the bulk of the space. 
+- The command *find . -size +5M* is searching all the files and returning all the files that larger then 5 megabytes in this case. This can be useful for finding which files are taking up the bulk of the space. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -size +100k
@@ -339,13 +339,13 @@ Owen-Riess-Macbook:docsearch owenriess$ find . -size +100k
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -size +1G
 ```
--The command *find . -size +1G* return nowthing because none of the files in our current directory were over 1 gigabyte in size. This could more useful when working with bigger files. 
+- The command *find . -size +1G* return nowthing because none of the files in our current directory were over 1 gigabyte in size. This could more useful when working with bigger files. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -type f -name "chapter-11.txt"
 ./technical/911report/chapter-11.txt
 ```
--The command *find . -type f -name "chapter-11.txt"* is just looking for the file within the current directory that matches the name within the quotes. This could be useful for accessing a file that you know the name of quickly. 
+- The command *find . -type f -name "chapter-11.txt"* is just looking for the file within the current directory that matches the name within the quotes. This could be useful for accessing a file that you know the name of quickly. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -type f -name "chapter*"
@@ -366,7 +366,7 @@ Owen-Riess-Macbook:docsearch owenriess$ find . -type f -name "chapter*"
 ./technical/911report/chapter-11.txt
 ```
 
--The command *find . -type f -name "chapter*"* searching all the files within the current directory and returning all the files that begin with chapter. This could be useful for finding all the files that may be grouped together in some way because they all start with the same name. 
+- The command *find . -type f -name "chapter*"* searching all the files within the current directory and returning all the files that begin with chapter. This could be useful for finding all the files that may be grouped together in some way because they all start with the same name. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -type f -iname "chapter*"
