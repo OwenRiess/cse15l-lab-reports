@@ -220,16 +220,174 @@ class ListExamples {
 
 
 
+<div style="page-break-after: always"></div>
 
+**Lab Report 3**
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type f -mmin -10
+./technical/911report/chapter-1.txt
+```
+- Here is used the *find . -type f -mmin -10* tyo find all the files that had been edited in the last 10 minutes. I edited the ./technical/911report/chapter-1.txt file a little so that is why it showed up when this command was called. This could be useful for monitoring what is being changed when you are collaborating with people on big projects. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type f -mmin +1 -mmin -10
+./technical/911report/chapter-1.txt
+```
+- The command *find . -type f -mmin +1 -mmin -10* is pretty similar to the one above but it is just looking for files that have been edited more then 1 minute ago and less then 10 minute ago. This can be helpful for checking what files were being edited at more specific times. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type d -mtime -10
+.
+./lib
+./.git
+./.git/objects
+./.git/objects/6f
+./.git/objects/02
+./.git/objects/a4
+./.git/objects/bb
+./.git/objects/ab
+./.git/objects/c7
+./.git/objects/c0
+./.git/objects/fe
+./.git/objects/ec
+./.git/objects/18
+./.git/objects/pack
+./.git/objects/80
+./.git/objects/10
+./.git/objects/19
+./.git/objects/info
+./.git/objects/62
+./.git/objects/08
+./.git/objects/d5
+./.git/objects/f9
+./.git/objects/46
+./.git/objects/12
+./.git/objects/47
+./.git/info
+./.git/logs
+./.git/logs/refs
+./.git/logs/refs/heads
+./.git/logs/refs/remotes
+./.git/logs/refs/remotes/origin
+./.git/logs/refs/remotes/upstream
+./.git/hooks
+./.git/refs
+./.git/refs/heads
+./.git/refs/tags
+./.git/refs/remotes
+./.git/refs/remotes/origin
+./.git/refs/remotes/upstream
+./.git/branches
+./technical
+./technical/government
+./technical/government/About_LSC
+./technical/government/Env_Prot_Agen
+./technical/government/Alcohol_Problems
+./technical/government/Gen_Account_Office
+./technical/government/Post_Rate_Comm
+./technical/government/Media
+./technical/plos
+./technical/biomed
+./technical/911report
+```
+-The command *find . -type d -mtime -10* is checking for all the directories that have been edited less then ten days ago. This can be helpful for keeping track of what directories have been edited over a longer period of time. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -size +5M
+./.git/objects/pack/pack-76c2be97747be8c169abcc0a0a6082bddbd7ec39.pack
+```
+-The command *find . -size +5M* is searching all the files and returning all the files that larger then 5 megabytes in this case. This can be useful for finding which files are taking up the bulk of the space. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -size +100k
+./lib/junit-4.13.2.jar
+./.git/objects/pack/pack-76c2be97747be8c169abcc0a0a6082bddbd7ec39.pack
+./.git/index
+./technical/government/About_LSC/commission_report.txt
+./technical/government/About_LSC/State_Planning_Report.txt
+./technical/government/Env_Prot_Agen/multi102902.txt
+./technical/government/Env_Prot_Agen/ctm4-10.txt
+./technical/government/Env_Prot_Agen/bill.txt
+./technical/government/Env_Prot_Agen/tech_adden.txt
+./technical/government/Gen_Account_Office/d0269g.txt
+./technical/government/Gen_Account_Office/GovernmentAuditingStandards_yb2002ed.txt
+./technical/government/Gen_Account_Office/Sept27-2002_d02966.txt
+./technical/government/Gen_Account_Office/d01376g.txt
+./technical/government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
+./technical/government/Gen_Account_Office/pe1019.txt
+./technical/government/Gen_Account_Office/gg96118.txt
+./technical/government/Gen_Account_Office/d01591sp.txt
+./technical/government/Gen_Account_Office/im814.txt
+./technical/government/Gen_Account_Office/ai9868.txt
+./technical/government/Gen_Account_Office/May1998_ai98068.txt
+./technical/government/Gen_Account_Office/d02701.txt
+./technical/biomed/1471-2105-3-2.txt
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-1.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-9.txt
+./technical/911report/chapter-12.txt
+```
+- The command *find . -size +100k* is searching all the files in the current directory that are over 100 kilobytes. This can be useful if we are trying to organize the files by size or we just want to know how many files over a certain size that we have. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -size +1G
+```
+-The command *find . -size +1G* return nowthing because none of the files in our current directory were over 1 gigabyte in size. This could more useful when working with bigger files. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type f -name "chapter-11.txt"
+./technical/911report/chapter-11.txt
+```
+-The command *find . -type f -name "chapter-11.txt"* is just looking for the file within the current directory that matches the name within the quotes. This could be useful for accessing a file that you know the name of quickly. 
 
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type f -name "chapter*"
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-2.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-9.txt
+./technical/911report/chapter-8.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+```
 
+-The command *find . -type f -name "chapter*"* searching all the files within the current directory and returning all the files that begin with chapter. This could be useful for finding all the files that may be grouped together in some way because they all start with the same name. 
+
+```
+Owen-Riess-Macbook:docsearch owenriess$ find . -type f -iname "chapter*"
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-2.txt
+./technical/911report/Chapter-1.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-9.txt
+./technical/911report/chapter-8.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+```
+- The command *find . -type f -iname "chapter*"* does the same thing as the command above but the iname makes it case insersitive so if there was a file that started with a capital C in chapter it would be included. I changed the file name for chapter 1 so that it was capital and it was still included but not included above. This could be usedful when many people have been told to make a file that starts with the same name but some people choose to make the word start with a captial letter and others choose not to. 
 
 
 
