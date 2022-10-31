@@ -228,7 +228,7 @@ class ListExamples {
 Owen-Riess-Macbook:docsearch owenriess$ find . -type f -mmin -10
 ./technical/911report/chapter-1.txt
 ```
-- Here *find . -type f -mmin -10* to find all the files that had been edited in the last 10 minutes. I edited the ./technical/911report/chapter-1.txt file a little so that is why it showed up when this command was called. This could be useful for monitoring what is being changed when you are collaborating with people on big projects. 
+- Here the command *find . -type f -mmin -10* was used to find all the files that had been edited in the last 10 minutes. I edited the ./technical/911report/chapter-1.txt file a little so that is why it showed up when this command was called. This could be useful for monitoring what is being changed when you are collaborating with people on big projects. 
 
 ```
 Owen-Riess-Macbook:docsearch owenriess$ find . -type f -mmin +1 -mmin -10
