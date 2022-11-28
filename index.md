@@ -466,7 +466,8 @@ git clone $1 student-submission #exit code = 0
 
 cd student-submission
 
-if [[ $? -eq 0 ]] # this if statment would be true because it is checking if previous exit code was 0
+if [[ $? -eq 0 ]] # this if statment would be true  
+                  #it is checking if previous exit code was 0
 then 
     echo "Successfully cloned" #standard output
 else 
@@ -476,7 +477,8 @@ fi
 
 FFILE=$(basename $FPATH)
 
-if [[ $FFILE == "ListExamples.java" ]] #checks if the ListExamples.java file was moved into the student submison folder
+if [[ $FFILE == "ListExamples.java" ]] #checks if the ListExamples.java file
+                                       # was moved into the student submison folder
 then
     echo "File found" #standard output
 else   
@@ -496,7 +498,8 @@ fi
 
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples 2> output.txt
 #this is running the junit test from TestListExamples.java
-if [[ $? -eq 0 ]] #In this version it passes all the junit test exit code would still be 0
+if [[ $? -eq 0 ]]#In this version it passes all the junit test 
+                 #exit code would still be 0
 then
     echo "Test passed" #standard output
     exit
@@ -504,4 +507,5 @@ else
     echo "Test failed"
     exit 
 fi
+
 ```
