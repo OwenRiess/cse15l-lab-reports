@@ -390,4 +390,70 @@ Owen-Riess-Macbook:docsearch owenriess$ find . -type f -iname "chapter*"
 - The command *find . -type f -iname "chapter*"* does the same thing as the command above but the iname makes it case insersitive so if there was a file that started with a capital C in chapter it would be included. I changed the file name for chapter 1 so that it was capital and it was still included but not included above. This could be usedful when many people have been told to make a file that starts with the same name but some people choose to make the word start with a captial letter and others choose not to. 
 
 
+<div style="page-break-after: always"></div>
 
+**Lab Report 5**
+
+grade.sh 
+```
+CPATH=".:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar"
+FPATH=$(find student-submission/* -type f)
+rm -rf student-submission
+git clone $1 student-submission
+
+cd student-submission
+
+if [[ $? -eq 0 ]]
+then 
+    echo "Successfully cloned"
+else 
+    echo "Clone failed"
+    exit 
+fi
+
+FFILE=$(basename $FPATH)
+
+if [[ $FFILE == "ListExamples.java" ]]
+then
+    echo "File found"
+else   
+    echo "$FFILE is not the correct file"
+    exit 
+fi
+
+javac -cp $CPATH *.java
+
+if [[ $? -eq 0 ]]
+then 
+    echo "Compiled successfully"
+else
+    echo "Compile error"
+    exit 
+fi 
+
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples 2> output.txt
+
+if [[ $? -eq 0 ]]
+then
+    echo "Test passed"
+    exit
+else 
+    echo "Test failed"
+    exit 
+fi
+```
+
+Student submission [Methods corrected](https://github.com/ucsd-cse15l-f22/list-methods-corrected.git)
+
+![image18](images/correct.png)
+
+Student submission [Compile error](https://github.com/ucsd-cse15l-f22/list-methods-compile-error.git)
+
+![image19](images/compile-error.png)
+
+Student submission [Filename](https://github.com/ucsd-cse15l-f22/list-methods-filename.git)
+
+![image20](images/filename.png)
+
+
+**Trace for Method corrected code
