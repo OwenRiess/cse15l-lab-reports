@@ -456,4 +456,52 @@ Student submission [Filename](https://github.com/ucsd-cse15l-f22/list-methods-fi
 ![image20](images/filename.png)
 
 
-**Trace for Method corrected code
+**Trace for Method corrected code**
+
+```
+CPATH=".:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar" 
+FPATH=$(find student-submission/* -type f)
+rm -rf student-submission #exit code = 0
+git clone $1 student-submission #exit code = 0
+
+cd student-submission
+
+if [[ $? -eq 0 ]] # this if statment would be true because it is checking if previous exit code was 0
+then 
+    echo "Successfully cloned" #standard output
+else 
+    echo "Clone failed"
+    exit 
+fi
+
+FFILE=$(basename $FPATH)
+
+if [[ $FFILE == "ListExamples.java" ]] #checks if the ListExamples.java file was moved into the student submison folder
+then
+    echo "File found" #standard output
+else   
+    echo "$FFILE is not the correct file"
+    exit 
+fi
+
+javac -cp $CPATH *.java 
+#checking if the code is able to compile which is does in this example
+if [[ $? -eq 0 ]] #exit code would be 0 because it compiled successfully
+then 
+    echo "Compiled successfully" #standard output
+else
+    echo "Compile error"
+    exit 
+fi 
+
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples 2> output.txt
+#this is running the junit test from TestListExamples.java
+if [[ $? -eq 0 ]] #In this version it passes all the junit test exit code would still be 0
+then
+    echo "Test passed" #standard output
+    exit
+else 
+    echo "Test failed"
+    exit 
+fi
+```
