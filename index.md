@@ -389,6 +389,58 @@ Owen-Riess-Macbook:docsearch owenriess$ find . -type f -iname "chapter*"
 ```
 - The command *find . -type f -iname "chapter*"* does the same thing as the command above but the iname makes it case insersitive so if there was a file that started with a capital C in chapter it would be included. I changed the file name for chapter 1 so that it was capital and it was still included but not included above. This could be usedful when many people have been told to make a file that starts with the same name but some people choose to make the word start with a captial letter and others choose not to. 
 
+<div style="page-break-after: always"></div>
+
+**Lab Report 4**
+
+**part 1**
+
+Task: changing the  the name of the start parameter of getFiles, and all of its uses, to instead be called base.
+
+Vim DocsearchServer.java
+
+Keystrokes:
+```
+/start<enter>
+ce
+base<esc>
+n.
+n.
+:w<enter>
+```
+total Keystrokes: 21
+
+The first step after entering vim is ``/start<enter>`` which will bring your cursor to the first place start shows up.
+
+![image18](images/start.png)
+
+The next step is to press ``ce`` which will delete start from where your cursor is and have vim enter insert mode.
+
+![image18](images/ce.png)
+
+The next step is to type in ``base<esc>`` which will just type in base while in insert mode and exit out of escape mode.
+
+![image18](images/base.png)
+
+After that we would press ``n.`` which will jump to the next interation of start and replace it with base. You would repeat this proccess twice.
+
+![image18](images/n.png)
+
+The final step is to type in ``:w<enter>``. This action will safe the changes made by vim in the file.
+
+![image18](images/w.png)
+
+**Part 2**
+
+scp method time: 1:34
+
+starting logged into ssh: 2:53 sec
+
+-I would perfer to still make the edits locally and scp the changes over to the remote server becuase I'm still not use to using vim to make edits. I can see how vim could be faster if I was more accustomed to it.
+
+-I feel like vim would be good to make a couple of small edits to a project. If there were a lot of edits to be made to a project I would rather make the edits locally.
+
+
 
 <div style="page-break-after: always"></div>
 
